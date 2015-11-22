@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
+- (IBAction)changeMapType:(UISegmentedControl *)sender;
+
 @end
 
 @implementation FirstViewController
@@ -45,4 +47,23 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeMapType:(UISegmentedControl *)sender {
+    
+    switch (((UISegmentedControl *)sender).selectedSegmentIndex) {
+        case 0:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        case 2:
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        default:
+            break;
+    }
+    
+//    self.mapView.mapType = MKMapTypeStandard // MKMapTypeHybrid // MKMapTypeSatellite
+    
+}
 @end

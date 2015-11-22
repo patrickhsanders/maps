@@ -27,17 +27,45 @@
                                 <animations/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-hX-JsP">
+                                <rect key="frame" x="10" y="515" width="175" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Sat"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="9pv-A4-QxB" eventType="valueChanged" id="L7y-8g-CAG"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GBh-hX-JsP" secondAttribute="trailing" constant="-11" id="3Xs-Ou-KMM"/>
                             <constraint firstItem="Ls6-zk-7js" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="4Z9-7X-Qnb"/>
                             <constraint firstItem="k72-KR-shO" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="5Qk-kX-hO7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ls6-zk-7js" secondAttribute="trailing" constant="-20" id="7B1-tI-2s3"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="GBh-hX-JsP" secondAttribute="bottom" constant="8" id="Dqd-db-De8"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Ls6-zk-7js" secondAttribute="bottom" id="GL9-8F-TiK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k72-KR-shO" secondAttribute="trailing" constant="-20" id="MIk-FP-DUp"/>
                             <constraint firstItem="Ls6-zk-7js" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="NWg-xb-FW4"/>
+                            <constraint firstItem="GBh-hX-JsP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="U8q-qr-HdX"/>
+                            <constraint firstItem="GBh-hX-JsP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-14" id="aGw-eu-0Zl"/>
+                            <constraint firstItem="GBh-hX-JsP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="frQ-i9-i8O"/>
+                            <constraint firstItem="GBh-hX-JsP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-10" id="jAj-P8-MUq"/>
+                            <constraint firstItem="GBh-hX-JsP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-14" id="zhl-fE-nUP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Xs-Ou-KMM"/>
+                                <exclude reference="U8q-qr-HdX"/>
+                                <exclude reference="aGw-eu-0Zl"/>
+                                <exclude reference="frQ-i9-i8O"/>
+                                <exclude reference="zhl-fE-nUP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="MKMapKit" image="apple" id="acW-dT-cKf"/>
                     <connections>
@@ -59,37 +87,54 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="GoogleMaps" image="google-big-g-new" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Skobbler-->
+        <scene sceneID="uDv-Q4-qSp">
+            <objects>
+                <viewController id="Pvu-Sr-Xsa" customClass="FourthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="953-uN-OaF"/>
+                        <viewControllerLayoutGuide type="bottom" id="cdE-JI-ZrB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rne-ug-0HK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Skobbler" image="skobbler" id="456-St-6Zs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6Q-Eh-QcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="1034"/>
+        </scene>
+        <!--MapBox GL-->
+        <scene sceneID="cfG-zI-Sit">
+            <objects>
+                <viewController id="3P3-O9-Rqg" customClass="ThirdViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FHi-cj-H4D"/>
+                        <viewControllerLayoutGuide type="bottom" id="dBv-bR-4IH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="45s-2I-rsm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MapBox GL" image="mapbox" id="TAW-eg-BeT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVV-pf-lny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1022"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -105,6 +150,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="3P3-O9-Rqg" kind="relationship" relationship="viewControllers" id="yCO-lI-K7Q"/>
+                        <segue destination="Pvu-Sr-Xsa" kind="relationship" relationship="viewControllers" id="Kcl-bD-wPS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -115,5 +162,7 @@
     <resources>
         <image name="apple" width="30" height="30"/>
         <image name="google-big-g-new" width="30" height="30"/>
+        <image name="mapbox" width="30" height="30"/>
+        <image name="skobbler" width="30" height="30"/>
     </resources>
 </document>
