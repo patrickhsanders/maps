@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "MapViewDataAbstraction.h"
 
 @interface FirstViewController ()
 
@@ -20,7 +21,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  //mapViewData = [[MapViewDataAbstraction alloc] init];
+    
   self.mapView.delegate = self;
   CLLocationCoordinate2D locationOfTTT = CLLocationCoordinate2DMake(40.741448, -73.989969);
   MKCoordinateSpan mapSpan = MKCoordinateSpanMake(0.05, 0.05);
@@ -36,15 +38,32 @@
   turnToTech.title = @"TurnToTech";
   turnToTech.subtitle = @"IS AWESOME";
   [_mapView addAnnotation:turnToTech];
-
-  
-  
-  // Do any additional setup after loading the view, typically from a nib.
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    MapViewDataAbstraction *mdao = [MapViewDataAbstraction sharedManager];
+    
+    //needs to be replaced
+    switch (mdao.mapType) {
+        case 0:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        case 2:
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        default:
+            break;
+    }
+    
+    [self.mapView setRegion:MKCoordinateRegionMake(mdao.centerCoordinate, MKCoordinateSpanMake(mdao.xSpanDelta, mdao.ySpanDelta))];
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)changeMapType:(UISegmentedControl *)sender {
@@ -62,8 +81,17 @@
         default:
             break;
     }
-    
-//    self.mapView.mapType = MKMapTypeStandard // MKMapTypeHybrid // MKMapTypeSatellite
-    
+    MapViewDataAbstraction *mdao = [MapViewDataAbstraction sharedManager];
+    mdao.mapType = sender.selectedSegmentIndex;
 }
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    MapViewDataAbstraction *mapViewData = [MapViewDataAbstraction sharedManager];
+    mapViewData.centerCoordinate = mapView.region.center;
+    mapViewData.xSpanDelta = mapView.region.span.latitudeDelta;
+    mapViewData.ySpanDelta = mapView.region.span.longitudeDelta;
+    mapViewData.cameraHeading = mapView.camera.heading;
+    NSLog(@"A - %@",mapViewData);
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-@import GoogleMaps;
+#import "MapViewDataAbstraction.h"
 
 @interface SecondViewController ()
 
@@ -28,6 +28,7 @@
                                                                  zoom:17];
     mapView_ = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     mapView_.myLocationEnabled = YES;
+    mapView_.delegate = self;
     [self.view addSubview:mapView_];
     
     // Creates a marker in the center of the map.
@@ -42,7 +43,25 @@
     [mapType addTarget:self action:@selector(changeMapType:) forControlEvents:UIControlEventValueChanged];
     mapType.selectedSegmentIndex = 0;
     [self.view addSubview:mapType];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    MapViewDataAbstraction *mdao = [MapViewDataAbstraction sharedManager];
     
+}
+
+- (void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition *)position {
+    MapViewDataAbstraction *mapViewData = [MapViewDataAbstraction sharedManager];
+    mapViewData.centerCoordinate = position.target;
+    
+    //http://stackoverflow.com/questions/1336370/positioning-mkmapview-to-show-multiple-annotations-at-once
+    // Add a little extra space on the sides
+    mapViewData.xSpanDelta = fabs(mapView.projection.visibleRegion.farLeft.latitude - mapView.projection.visibleRegion.nearRight.latitude);
+    mapViewData.xSpanDelta = fabs(mapView.projection.visibleRegion.nearRight.longitude - mapView.projection.visibleRegion.farLeft.longitude);
+
+    
+    mapViewData.cameraHeading = position.bearing;
+    NSLog(@"G - %@",mapViewData);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +90,8 @@
         default:
             break;
     }
+    MapViewDataAbstraction *mdao = [MapViewDataAbstraction sharedManager];
+    mdao.mapType = sender.selectedSegmentIndex;
 }
 
 @end

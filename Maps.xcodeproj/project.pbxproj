@@ -16,6 +16,7 @@
 		AAE4937F1BFF9CCF002FF9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE4937E1BFF9CCF002FF9AC /* Assets.xcassets */; };
 		AAE493821BFF9CCF002FF9AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE493801BFF9CCF002FF9AC /* LaunchScreen.storyboard */; };
 		CD84E0981C0033D9006B1AA7 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84E0971C0033D9006B1AA7 /* FourthViewController.m */; };
+		CD84E0A21C02ACF2006B1AA7 /* MapViewDataAbstraction.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84E0A11C02ACF2006B1AA7 /* MapViewDataAbstraction.m */; };
 		CDEF46D91C00047200060F37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEF46D81C00047200060F37 /* MapKit.framework */; };
 		CDEF47021C00128800060F37 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEF47011C00128800060F37 /* ThirdViewController.m */; };
 		CDEF47041C00144500060F37 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDEF47031C00144500060F37 /* Settings.bundle */; };
@@ -37,6 +38,8 @@
 		AAE493831BFF9CCF002FF9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD84E0961C0033D9006B1AA7 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		CD84E0971C0033D9006B1AA7 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		CD84E0A01C02ACF2006B1AA7 /* MapViewDataAbstraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewDataAbstraction.h; sourceTree = "<group>"; };
+		CD84E0A11C02ACF2006B1AA7 /* MapViewDataAbstraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewDataAbstraction.m; sourceTree = "<group>"; };
 		CDEF46D81C00047200060F37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CDEF47001C00128800060F37 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		CDEF47011C00128800060F37 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 		AAE4936E1BFF9CCF002FF9AC /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				CD84E0A01C02ACF2006B1AA7 /* MapViewDataAbstraction.h */,
+				CD84E0A11C02ACF2006B1AA7 /* MapViewDataAbstraction.m */,
 				AAE493721BFF9CCF002FF9AC /* AppDelegate.h */,
 				AAE493731BFF9CCF002FF9AC /* AppDelegate.m */,
 				AAE493751BFF9CCF002FF9AC /* FirstViewController.h */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD84E0A21C02ACF2006B1AA7 /* MapViewDataAbstraction.m in Sources */,
 				CD84E0981C0033D9006B1AA7 /* FourthViewController.m in Sources */,
 				AAE4937A1BFF9CCF002FF9AC /* SecondViewController.m in Sources */,
 				CDEF47021C00128800060F37 /* ThirdViewController.m in Sources */,

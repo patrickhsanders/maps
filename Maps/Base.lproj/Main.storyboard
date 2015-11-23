@@ -96,26 +96,6 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Skobbler-->
-        <scene sceneID="uDv-Q4-qSp">
-            <objects>
-                <viewController id="Pvu-Sr-Xsa" customClass="FourthViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="953-uN-OaF"/>
-                        <viewControllerLayoutGuide type="bottom" id="cdE-JI-ZrB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rne-ug-0HK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Skobbler" image="skobbler" id="456-St-6Zs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m6Q-Eh-QcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="71" y="1034"/>
-        </scene>
         <!--MapBox GL-->
         <scene sceneID="cfG-zI-Sit">
             <objects>
@@ -151,7 +131,6 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="3P3-O9-Rqg" kind="relationship" relationship="viewControllers" id="yCO-lI-K7Q"/>
-                        <segue destination="Pvu-Sr-Xsa" kind="relationship" relationship="viewControllers" id="Kcl-bD-wPS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -163,6 +142,5 @@
         <image name="apple" width="30" height="30"/>
         <image name="google-big-g-new" width="30" height="30"/>
         <image name="mapbox" width="30" height="30"/>
-        <image name="skobbler" width="30" height="30"/>
     </resources>
 </document>
